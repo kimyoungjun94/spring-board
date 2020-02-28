@@ -1,0 +1,20 @@
+<%@ page import="java.util.List"%>
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="java.util.Map"%>
+<%@ page import="java.util.HashMap"%>
+<%@ page session="false" pageEncoding="UTF-8"
+	contentType="text/html; charset=UTF-8"%>
+	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="EUC-KR">
+		<title>게시글 수정</title>
+		<link href="tomcat.css" rel="stylesheet" type="text/css" />
+	</head>
+	
+	
+	<body>
+
+	</body>
+</html>
