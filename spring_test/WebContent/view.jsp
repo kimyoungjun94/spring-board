@@ -38,6 +38,12 @@
 			<button onclick="location.href = '/modify.jsp'">수정</button>
 			<button onclick="location.href = '/delete.jsp'">삭제</button>
 		</div>
+		<br/>
+		
+		<div style="text-align : center;">
+			<button onclick="location.href = '/list.jsp'">게시글 목록</button>
+			
+		</div>
 		
 	</body>
 	

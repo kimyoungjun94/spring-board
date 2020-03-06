@@ -1,11 +1,41 @@
+<%@ page import="java.sql.Driver"%>
 <%@ page import="java.util.List" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="java.util.Map" %>
 <%@ page import="java.util.HashMap" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
 <%@ page session="false" pageEncoding="UTF-8" contentType="text/html; charset=UTF-8" %>
 <%
-    
-    List<Map<String, String>> list = new ArrayList<Map<String, String>>(){{
+	Connection connection = null;
+	PreparedStatement prestat = null;
+	ResultSet rs = null;
+	
+	String dbURL = "jdbc:mysql://localhost:3306/my_web_board?serverTimezone=UTC";
+	String dbID = "root";
+	String dbPassword = "kyj!1994";
+	Class.forName("com.mysql.cj.jdbc.Driver");
+	connection = DriverManager.getConnection(dbURL, dbID, dbPassword);
+	
+	System.out.println("connection : " + connection);
+
+	String query = "select * from board";
+	prestat = connection.prepareStatement(query);
+	rs = prestat.executeQuery();
+	
+	/* while(rs.next()){
+		String No = rs.getString("No");
+		String Title = rs.getString("Title");
+		String Content = rs.getString("Content");
+		String CreateTime = rs.getString("CreateTime");
+		String UpdateTime = rs.getString("UpdateTime");
+		
+		System.out.println(No + "\t" + Title + "\t" + Content + "\t" + CreateTime + "\t" + UpdateTime);
+	} */
+
+    /* List<Map<String, String>> list = new ArrayList<Map<String, String>>(){{
             add(new HashMap<String, String>(){{
                     put("seq", "1");
                     put("title", "test_title");
@@ -66,7 +96,7 @@
                 	put("content", "test_content");
                 	put("cnt", "test_cnt");
         	}});
-    }};
+    }}; */
 
 %>
 <!DOCTYPE html>
@@ -80,7 +110,7 @@
     <body>
         <h2>게시글 목록</h2><br/>
         list.jsp<br/>
-        list size : <%= list.size() %><br/>
+        <%-- list size : <%= list.size() %><br/> --%>
 
         <table>
             <thead> 
@@ -88,18 +118,20 @@
                     <th>No</th>
                     <th>Title</th>
                     <th>Content</th>
-                    <th>Cnt</th>
+                    <th>CreateTime</th>
+                    <th>UpdateTime</th>
                 </tr>
             </thead>
             <tbody id="tbody">
-                <% for(int i=0; i<list.size(); i++){ %>
-                <tr onclick="location.href='/view.jsp?id=<%= list.get(i).get("seq") %>'">
-                    <td><%= i+1 %></td>
-                    <td><%= list.get(i).get("title") + "_" + (i+1) %></td>
-                    <td><%= list.get(i).get("content") + "_" + (i+1) %></td>
-                    <td><%= list.get(i).get("cnt") + " : 0" %>
-                </tr>
-                <% } %>
+         		<% while(rs.next()) { %>
+         		<tr onclick = "location.href='/view.jsp?id=<%= rs.getString("No") %>'">
+         			<td><%= rs.getString("No") %></td>
+         			<td><%= rs.getString("Title") %></td>
+         			<td><%= rs.getString("Content") %></td>
+         			<td><%= rs.getString("CreateTime") %></td>
+         			<td><%= rs.getString("UpdateTime") %></td>
+         		</tr>
+         		<% } %>
             </tbody>
         </table>
 
