@@ -1,7 +1,3 @@
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="java.util.Map"%>
-<%@ page import="java.util.HashMap"%>
 <%@ page import="java.sql.Driver"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.DriverManager"%>
