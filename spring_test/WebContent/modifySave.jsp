@@ -19,8 +19,7 @@
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(dbURL, dbID, dbPassword);
 
-	System.out.println("connection : " + connection);
-	System.out.println("DataBase 연결 성공");
+	System.out.println("connection : " + connection + " DataBase Connect Success");
 	
 %>
 <!DOCTYPE html>

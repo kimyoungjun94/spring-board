@@ -16,7 +16,7 @@
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(dbURL, dbID, dbPassword); // DB 연동
 
-	System.out.println("connection : " + connection);
+	System.out.println("connection : " + connection + " DataBase Connect Success");
 
 	String query = "select * from board order by No desc";
 	prestat = connection.prepareStatement(query); // DB 연동

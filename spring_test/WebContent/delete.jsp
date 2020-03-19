@@ -16,8 +16,7 @@
 	Class.forName("com.mysql.cj.jdbc.Driver");
 	connection = DriverManager.getConnection(dbURL, dbID, dbPassword);
 
-	System.out.println("connection : " + connection);
-	System.out.println("DataBase 연결 성공");
+	System.out.println("connection : " + connection + " DataBase Connect Success");
 	
 	String url = request.getQueryString().substring(3);
 	/* System.out.println(url); */ //id=1 에서 1만 가져온다
