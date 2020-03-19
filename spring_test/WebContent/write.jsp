@@ -1,7 +1,3 @@
-<%@ page import="java.util.List"%>
-<%@ page import="java.util.ArrayList"%>
-<%@ page import="java.util.Map"%>
-<%@ page import="java.util.HashMap"%>
 <%@ page import="java.sql.Driver"%>
 <%@ page import="java.sql.Connection"%>
 <%@ page import="java.sql.DriverManager"%>
@@ -10,7 +6,7 @@
 <%@ page import="java.util.Date"%>
 <%@ page import="java.text.SimpleDateFormat"%>
 <%@ page session="false" pageEncoding="UTF-8"
-	contentType="text/html; charset=UTF-8"%>
+	contentType="text/html; charset=UTF-8" language="java"%>
 
 <%
 	Connection connection = null;
