@@ -14,7 +14,7 @@
 	String dbID = "root";
 	String dbPassword = "kyj!1994";
 	Class.forName("com.mysql.cj.jdbc.Driver");
-	connection = DriverManager.getConnection(dbURL, dbID, dbPassword);
+	connection = DriverManager.getConnection(dbURL, dbID, dbPassword);  // DB 연결
 
 	System.out.println("connection : " + connection + " DataBase Connect Success");
 
