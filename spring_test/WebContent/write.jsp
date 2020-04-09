@@ -56,7 +56,7 @@
 
 <body>
 	<h2>글쓰기</h2>
-	write.jsp
+	write.jsp ^^
 	<br />
 	<br />
 	<br />
