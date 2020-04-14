@@ -9,7 +9,7 @@
 	
 	
 	<body>
-		<h1><button onclick="location.href = '/list.jsp'">게시판이다 이자식들아</button></h1>
+		<h1><button onclick="location.href = '/list.jsp'">클릭해봐~</button></h1>
 	</body>
 	
 </html>
