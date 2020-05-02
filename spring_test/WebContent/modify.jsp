@@ -81,10 +81,10 @@
 					<td>CreateTime</td>
 					<td><%=rs.getString("CreateTime")%></td>
 				</tr>
-				<tr>
+				<%-- <tr>
 					<td>UpdateTime</td>
 					<td><%=rs.getString("UpdateTime")%></td>
-				</tr>
+				</tr> --%>
 				<%
 					}
 				%>
